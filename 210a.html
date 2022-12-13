@@ -41,12 +41,11 @@
         function desenhaBarra(x, y, serie, cores, texto) {
         
             desenhaTexto(x, y - 10, texto);
-
+        
             for (var i = 0; i < serie.length; i++){
                 desenhaRetangulo(x, y, 50, serie[i], cores[i]);
                 y = y + serie[i];
             }
-            
         }
 
 
