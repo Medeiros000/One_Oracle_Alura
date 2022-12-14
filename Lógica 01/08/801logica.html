@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+<head>
+</head>
+
+<body>
+
+    <input/>
+    <button>Compare com o meu segredo</button>
+
+    <script>
+
+        function mostra(frase) {
+            document.write(frase);
+        }
+        
+        // Gerador de número aleatório que será o segredo 0-10
+        var segredo = Math.round(Math.random() * 10);
+        // Console para ver o número durante os testes
+        console.log(segredo);
+        // input puxa o conteúdo de <input/> para o JavaScript
+        var input = document.querySelector('input');
+        
+        // Põe o campo input  em evidência para o chute
+        input.focus();
+
+        function verifica(){
+
+            if (input.value == segredo) {
+                alert("Você acertou");
+            } else{
+                alert("Você errou")
+            }
+            // Limpa o campo input
+            input.value = "";
+            // Põe o campo input  em evidência para o novo chute
+            input.focus();
+
+        }
+
+        var button = document.querySelector("button");
+
+        button.onclick = verifica;
+       
+    
+    </script>
+    
+</body>
+
+</html>
+
+

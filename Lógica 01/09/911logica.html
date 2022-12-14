@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="#">
+
+<head>
+    
+</head>
+
+<body>
+
+    <h1>Receitas do Júnior</h1>
+
+        <script>
+
+            function mostra(frase){
+                document.write(frase);
+                document.write("<br>");
+            }
+
+            function adicionaIngrediente(quantidade){            
+            
+                var posicao = 1;
+
+                while(posicao <= quantidade) {
+
+                    var ingrediente = prompt("Informe o ingrediente " + posicao);
+
+                    var achou = false;
+
+                    for(var posicaoIngrediente=0; posicaoIngrediente<ingredientes.length; posicaoIngrediente++) {
+
+                        if(ingrediente == ingredientes[posicaoIngrediente]){
+                            var achou = true;
+                            break;
+                        }
+                    }
+                    if(achou == false){
+                        ingredientes.push(ingrediente);
+                        posicao++;
+                    }
+                }
+                return ingredientes;
+            }
+
+            function mostraIngrediente(){
+                for(var ingredienteMostra=0; ingredienteMostra < ingredientes.length; ingredienteMostra++){
+                    mostra(ingredientes[ingredienteMostra]);
+                }
+            }
+
+            var ingredientes = [];
+
+            var quantidade = parseInt(prompt("Quantos ingredientes você vai adicionar?"));
+
+            adicionaIngrediente(quantidade);
+
+            mostraIngrediente();
+
+            console.log(ingredientes);
+
+        </script>
+    
+</body>
+
+</html>
+
+

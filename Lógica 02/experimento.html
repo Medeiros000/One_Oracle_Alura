@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    
+</head>
+
+<body>
+
+    <script>
+
+        function mostra(frase){
+            document.write(' | ' + frase + ' | ')
+        }
+
+        function pulaLinha(){
+            document.write('<br>');
+        }
+
+
+        for (var tabela = 1; tabela <= 10; tabela++) {
+            for(var multiplicador = 1; multiplicador <= 10; multiplicador++){
+                mostra(tabela + ' x ' +  multiplicador + ' = ' + tabela*multiplicador);
+            }
+            pulaLinha();
+        }
+
+    </script>
+    
+</body>
+</html>

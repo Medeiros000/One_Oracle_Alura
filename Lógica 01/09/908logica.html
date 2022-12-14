@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="#">
+
+<head>
+    
+</head>
+
+<body>
+
+    <input/>
+    <button>Compare com o meu segredo</button>
+
+    <script>
+        // 5,7,10,2,3
+
+        // função para sortear números
+        function sorteia() { 
+            return Math.round(Math.random()*10);
+        }
+
+        // função para enviar os números para o Arrays automatizada
+        function sorteiaNumeros(quantidade) {
+            var segredos = [];
+            var numeros = 1
+            
+            while (numeros <= quantidade){
+                
+                //  variável que chama a função sorteia
+                var numeroAleatorio = sorteia();
+                
+                // "if" - para permitir que somente saiam números diferentes de 0(zero)
+                if(numeroAleatorio != 0){
+                    
+                    // variável para impedir que funções "if" se repitam
+                    var achou = false;
+
+                    // "for" para verificar se algum número saiu repetido fazendo busca no Arrays
+                    for (var posicao = 0; posicao < segredos.length; posicao++) {
+                        
+                        // "if" para caso algum número saia repetido
+                        if(segredos[posicao] == numeroAleatorio){
+                            
+                            // variável "achou" troca valor para "true" impedindo que o "while" prossiga
+                            // para próxima função "if" e invalidando o número sorteado
+                            achou = true; 
+                            break;
+                        }
+                        
+                    }
+
+                    // "if" para empurar o número aleatório para o Arrays se não for repetido
+                    if(achou == false){
+                        segredos.push(numeroAleatorio);
+                        numeros++;
+
+                    }
+                }
+            }
+
+            // "return" para enviar o número encontrado para a variável segredos
+            // sem "return" o número fica preso dentro do "sorteiaNumeros"
+            return segredos;
+        }
+
+        var segredos = sorteiaNumeros(4);
+                        
+        console.log(segredos);
+
+        var input = document.querySelector("input");
+        input.focus();
+
+        function verifica(){
+
+            var achou = false;
+            
+            for(var posicao = 0; posicao < segredos.length; posicao++) {
+                if(input.value == segredos[posicao]) {
+
+                alert("Você acertou");
+                achou = true;
+                break;
+                }
+            }
+            if(achou == false) {
+
+            alert("Você ERROU!");
+            }
+
+            input.value = "";
+            input.focus();
+
+        }
+
+        var button = document.querySelector("button");
+
+        button.onclick = verifica;
+
+                 
+    
+    </script>
+    
+</body>
+
+</html>
+
+

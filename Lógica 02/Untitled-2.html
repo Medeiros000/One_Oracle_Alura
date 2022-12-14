@@ -1,0 +1,30 @@
+<canvas width="600" height="400"></canvas>
+<script type="text/javascript">
+    var tela = document.querySelector("canvas");
+    var pincel = tela.getContext("2d");
+
+
+
+    function desenharQuadrado(cor, x, y , largura, altura){
+        pincel.fillStyle =cor;
+        pincel.fillRect(x,y,largura,altura);
+
+        pincel.strokeStyle = "black";  //aqui definimos uma borda para o quadrado
+        pincel.strokeRect(x,y,50,50); // paramtros iguais do fillRect(x,y,largura,altura)
+
+    }
+
+    var conta = 1;
+    for(x = 0; x < 600; x = x + 50){
+        for(y = 0; y<400; y = y+50){
+            if(conta % 2 == 0){
+                desenharQuadrado("red",x,y);
+            }else{
+                desenharQuadrado("green",x,y);
+            }
+            conta++;
+        }
+        conta++;
+    }
+
+</script>

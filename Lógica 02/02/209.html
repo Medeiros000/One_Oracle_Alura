@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="#">
+        
+    </head>
+
+    <body>
+        <h3>Qual é a fração?</h3>
+
+        <canvas width="800" height="600"> </canvas>
+
+        <script>
+            
+            var tela = document.querySelector('canvas');
+            var pincel = tela.getContext('2d');
+
+            pincel.fillStyle = 'white';
+            pincel.fillRect(0, 0, 800, 600);
+
+            function desenhaQuadrado(x, y, cor){
+
+                pincel.fillStyle = cor;
+                pincel.fillRect(x, y, 50 ,50);
+                pincel.fillStroke= 'black';
+                pincel.strokeRect(x, y, 50 ,50);
+            }
+            
+            var numerador = parseInt(prompt("Qual é o numerador?"));
+            var denominador = parseInt(prompt("Qual é o denominador?"));
+
+            var x = 0
+            for (var j = 1; j <= denominador; j++) {
+                desenhaQuadrado(x, 0, 'white');
+                x = x + 50;
+            }
+            x = 0
+            for (var i = 1; i <= numerador; i++) {
+                desenhaQuadrado(x, 0, 'green');
+                x = x + 50;
+            }
+            
+
+        </script>
+        
+    </body>
+</html>

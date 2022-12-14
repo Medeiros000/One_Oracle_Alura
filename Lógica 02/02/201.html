@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="#">
+        
+    </head>
+
+    <body>
+
+        <canvas width="600" height="400"> </canvas>
+
+        <script>
+            
+            var tela = document.querySelector('canvas');
+            var pincel = tela.getContext('2d');
+
+            function desenhaQuadradoVerde(x, y, a, b){
+                pincel.fillStyle = 'green';
+                pincel.fillRect(x, y, a, b);
+                pincel.strokeStyle = 'red';
+                pincel.strokeRect(x, y, a, b);
+            }
+
+            /*pincel.fillRect(50, 0, 50, 50);
+            pincel.strokeRect(50, 0, 50, 50);
+
+            pincel.fillRect(100, 0, 50, 50);
+            pincel.strokeRect(100, 0, 50, 50);*/
+
+            desenhaQuadradoVerde(0, 0, 50, 50);
+            desenhaQuadradoVerde(50, 0, 50, 50);
+            desenhaQuadradoVerde(100, 0, 50, 50);
+
+        </script>
+        
+    </body>
+</html>

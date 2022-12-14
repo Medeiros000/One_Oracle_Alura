@@ -1,0 +1,27 @@
+<html>
+    <meta charset="UTF-8">
+<head>
+</head>
+
+<body>
+    <script>
+
+        function pulaLinha(){
+            document.write("<br><br>");
+        }
+        function mostra(frase){
+            document.write(frase);
+            pulaLinha();
+        }
+        
+        var anoAtual = 2016;
+        var anoPassados = Math.round((anoAtual - 1500)/28);
+
+        mostra("Se passaram " + anoPassados + " gerações." );
+
+    </script>
+</body>
+
+</html>
+
+

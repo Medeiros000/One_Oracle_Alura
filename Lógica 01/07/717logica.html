@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+<head>
+</head>
+
+<body>
+    <script>
+
+        function pulaLinha() {
+    
+            document.write("<br>");
+        }
+    
+        function mostra(frase){
+    
+            document.write(frase);
+            pulaLinha();
+        }
+    
+        function linhaE(){
+            for(var linha = 1; linha <= 3; linha++) {
+        
+                for(var coluna = 1; coluna <= 10; coluna++) {
+                    document.write("*");
+                }
+                pulaLinha();
+            }
+        }
+
+        linhaE();
+
+    </script>
+
+
+    
+</body>
+
+</html>
+
