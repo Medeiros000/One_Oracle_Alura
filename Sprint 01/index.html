@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+
+        <title>Decidificador de texto</title>
+        
+    </head>
+
+    <body>
+        
+        <div class="coluna">
+            <div class="linhas">
+                <div>
+                    <a href class="h3"> <h3>a</h3> </a href>
+                </div>
+                <div>
+                    <input
+                        type="text"
+                        id="digiteTexto"
+                        placeholder="Digite seu texto"
+                    />
+                </div>
+                <div>
+                    <p class="paragrafo-aviso">Apenas letras minúsculas e sem acento.</p>
+
+                    <button id="encode" class="buttonEncode"> 
+                        Criptografar
+                    </button>
+                    <button id="decode" class="buttonDecode"> 
+                        Descriptografar
+                    </button>
+                    
+                </div>
+            </div>
+
+            <div class="retangulo1">
+                <div>Mensagem não encontrada</div>
+                <div>
+                    <button id="copia"  class="buttonCopia">
+                        Copiar texto
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="linha2">
+            <div>
+                <p class="criador">Criado por Júnior Medeiros</p>
+            </div>
+            <div>
+                <a href="https://www.linkedin.com/in/j%C3%BAnior-medeiros-a58072259/" target="_blank" class="criador">
+                    <img src="Linkedin.png">
+                </a>
+            </div>
+        </div>
+        <script>
+
+            var encodeButton = document.getElementById("encode");
+            var decodeButton = document.getElementById("decode");
+            var copyButton = document.getElementById("copia");
+
+            function teste(){
+                alert('encode');
+            }
+            function teste2(){
+                alert('decode');
+            }
+            function teste3(){
+                alert('copy');
+            }
+            encodeButton.onclick = teste;
+            decodeButton.onclick = teste2;
+            copyButton.onclick = teste3;
+
+            
+
+        </script>
+        
+    </body>
+</html>
