@@ -6,11 +6,11 @@ body{
     width: 100%;
 }
 
-.principal{
-    
+.titulo-principal{
+    padding-left: 20px;
 }
 
-h1{
+.titulo-centralizado{
     text-align: center;
 }
 
