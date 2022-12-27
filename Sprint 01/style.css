@@ -1,6 +1,5 @@
 .coluna {
-    display: grid;
-    grid-template-columns: 600px 0px;
+    display:inline-block;
     }
 .linhas{
     display: grid;
@@ -30,7 +29,15 @@
     font-weight: 400;
     font-size: 25px;
     line-height: 150%;
-    
+        
+}
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+} 
+#digiteTexto: :active{
+    border: none;
 }
 
 .buttonEncode{
@@ -103,7 +110,7 @@ position: absolute;
 }
 
 .retangulo1 {
-    display: flex;
+    position: absolute;
     align-items:center;
     text-align: center;
     justify-content: center;
@@ -111,7 +118,7 @@ position: absolute;
     width: 400px;
     height: 600px;
     left: 800px;
-    top: 40px;
+    top: 0px;
 
     background: #FFFFFF;
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
