@@ -2,7 +2,7 @@
 <html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet" href="style.css">
 
@@ -12,134 +12,40 @@
 
     <body>
         <header class="cabecalho">
-            <a href class="letra"><img src="vector a.svg" alt="letra a" class="cabecalho-imagem"></a href>
+            <a href class="letra"><img src="vector.svg" alt="letra a" id="reset" class="cabecalho-imagem"></a href>
         </header>
 
         <main class="conteudo">
-            <article class="conteudo-esquerda">
-                <div class=".conteudo-esquerda-txt">
-                    <textarea id="textoParaEnDec" class="conteudo-esquerda-txt-textarea" cols="50" rows="15" placeholder="Digite seu texto"></textarea>
-                </div>
 
-                <div class="conteudo-esquerda-ab">
-                    <div class="conteudo-esquerda-ab-a">
-                        <p class="conteudo-esquerda-ab-aviso">&#128712;Apenas letras minúsculas e sem acento.</p>
+            <section class="conteudo-esquerda">
+                    <textarea id="textoParaEnDec" class="texto-input" placeholder="Digite seu texto" cols="30" rows="15"></textarea>
+                    <div class="aviso">
+                        <img class="img-aviso" src="exclamacao.svg" alt="!">
+                        <p class="aviso-texto">Apenas letras minúsculas e sem acento.</p>
                     </div>
-                    <div>
+                    <div class="botoes">
                         <button id="encode" class="buttonEncode">&#128274; Criptografar</button>
                         <button id="decode" class="buttonDecode">&#128275; Descriptografar</button>
                     </div>
-                </div>
-            </article>
+            </section>
 
-            <div class="conteudo-direita">
-                <textarea id="resposta" class="conteudo-direita-post" placeholder="Nenhuma mensagem encontrada"></textarea>
+            <section class="conteudo-direita">
+                <img class="img-direita" src="lupa.svg" alt="">
+                <textarea id="resposta" class="resposta" placeholder="Nenhuma mensagem encontrada"></textarea>
                 <div class="botoes-direita">
-                    <button id="copiar"  class="buttonCopiar">&#127279; Copiar texto</button>
-                    <button id="apagar"  class="buttonApagar">&#8998; Limpar</button>
+                    <button id="copiar" style="display: none;" class="buttonCopiar">Copiar texto</button>
                 </div>
-            </div>
+            </section>
             
 
         </main>
 
-        <footer>
-                <p class="criador">Criado por Júnior Medeiros</p>
-                <a href="https://www.linkedin.com/in/j%C3%BAnior-medeiros-a58072259/" target="_blank" class="criador">
+        <footer class="rodape">
+                <p class="criador">Criado por Júnior Medeiros</p><a href="https://www.linkedin.com/in/j%C3%BAnior-medeiros-a58072259/" target="_blank" class="criador-img">
                     <img src="Linkedin.png">
         </footer>
 
-        <script>
+        <script src="codificador.js"></script>
 
-            var encodeButton = document.getElementById("encode");
-            var decodeButton = document.getElementById("decode");
-            var copyButton = document.getElementById("copiar");
-            var eraseButton = document.getElementById("apagar");
-
-            function capturaEcodifica(){
-                var textarea = document.getElementById("textoParaEnDec");
-                var text = textarea.value;
-                const input = text;
-                const output = codificar(input);
-                resultado(output);
-            }
-            
-            function capturaEdecodifica(){
-                var textarea = document.getElementById("textoParaEnDec");
-                var text = textarea.value;
-                const input = text;
-                const output = decodificar(input);
-                resultado(output);
-            }
-
-            function resultado(frase){
-                var caixaResposta = document.querySelector('#resposta');
-                caixaResposta.value = frase;
-            }
-
-            function copiarTexto() {
-                let textoCopiado = document.getElementById("resposta");
-                textoCopiado.select();
-                textoCopiado.setSelectionRange(0, 99999)
-                document.execCommand("copy");
-            }
-
-            
-            function limparCampos(){
-                document.getElementById('textoParaEnDec').value = '';
-                document.getElementById('resposta').value = '';
-            }
-            
-            function codificar(input) {
-                const vogais = 'aeiou';
-                const letras = input.split('');
-                for (let i = 0; i < letras.length; i++) {
-                    if (vogais.indexOf(letras[i]) !== -1) {
-                        if(letras[i] == 'a'){
-                            letras[i] = 'air';
-                        }
-                        if(letras[i] == 'e'){
-                            letras[i] = 'enter';
-                        }
-                        if(letras[i] == 'i'){
-                            letras[i] = 'imes';
-                        }
-                        if(letras[i] == 'o'){
-                            letras[i] = 'ober';
-                        }
-                        if(letras[i] == 'u'){
-                            letras[i] = 'ufat';
-                        }
-                    }
-                }
-                return letras.join('');
-            }
-
-            function decodificar(palavra) {
-                var mapping = {
-                    'air': 'a',
-                    'enter': 'e',
-                    'imes': 'i',
-                    'ober': 'o',
-                    'ufat': 'u'
-                };
-                return palavra.replace(/air/g, mapping['air'])
-                                .replace(/enter/g, mapping['enter'])
-                                    .replace(/imes/g, mapping['imes'])
-                                        .replace(/ober/g, mapping['ober'])
-                                            .replace(/ufat/g, mapping['ufat']);
-            }
-
-            function transformarFrase(frase) {
-                var palavras = frase.split(' ');
-                var palavrasTransformadas = palavras.map(decodificar);
-                return palavrasTransformadas.join(' ');
-            }
-            encodeButton.onclick = capturaEcodifica;
-            decodeButton.onclick = capturaEdecodifica;
-            copyButton.onclick = copiarTexto;
-            eraseButton.onclick= limparCampos;
-
-        </script>
     </body>
 </html>
