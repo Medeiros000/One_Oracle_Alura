@@ -3,8 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
+        
         <link rel="stylesheet" href="reset.css">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="2style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 
         <title>Decidificador de texto</title>
         
@@ -12,28 +14,34 @@
 
     <body>
         <header class="cabecalho">
-            <a href class="letra"><img src="vector.svg" alt="letra a" id="reset" class="cabecalho-imagem"></a href>
+            <img src="vector.svg" alt="letra a" id="reset" title="Reset">
+            <p class="criador">Criado por Júnior Medeiros</p>
+            <a href="https://www.linkedin.com/in/j%C3%BAnior-medeiros-a58072259/" target="_blank"><img class="criador-img" src="in.svg"></a>
         </header>
 
         <main class="conteudo">
 
             <section class="conteudo-esquerda">
-                    <textarea id="textoParaEnDec" class="texto-input" placeholder="Digite seu texto" cols="30" rows="15"></textarea>
-                    <div class="aviso">
-                        <img class="img-aviso" src="exclamacao.svg" alt="!">
-                        <p class="aviso-texto">Apenas letras minúsculas e sem acento.</p>
-                    </div>
-                    <div class="botoes">
-                        <button id="encode" class="buttonEncode">&#128274; Criptografar</button>
-                        <button id="decode" class="buttonDecode">&#128275; Descriptografar</button>
+                    <textarea id="textoParaEnDec" class="texto-input" placeholder="Digite seu texto"></textarea>
+                    <div class="btna">
+                        <div class="aviso">
+                            <img src="exclamacao.svg" alt="!">
+                            <p>Apenas letras minúsculas e sem acento.</p>
+                        </div>
+                        <div class="botoes">
+                            <button id="encode" class="buttonEncode">&#128274; Criptografar</button>
+                            <button id="decode" class="buttonDecode">&#128275; Descriptografar</button>
+                        </div>
                     </div>
             </section>
 
             <section class="conteudo-direita">
-                <img class="img-direita" src="lupa.svg" alt="">
-                <textarea id="resposta" class="resposta" placeholder="Nenhuma mensagem encontrada"></textarea>
-                <div class="botoes-direita">
-                    <button id="copiar" style="display: none;" class="buttonCopiar">Copiar texto</button>
+                <div class="caixa">
+                    <img class="img-direita" src="lupa.svg" id="lupa" style="display: block;" alt="">
+                    <textarea id="resposta" class="resposta" placeholder="Nenhuma mensagem encontrada"></textarea>
+                    <div class="botoes-direita">
+                        <button id="copiar" style="display: none;" class="buttonCopiar">Copiar texto</button>
+                    </div>
                 </div>
             </section>
             
@@ -41,11 +49,14 @@
         </main>
 
         <footer class="rodape">
-                <p class="criador">Criado por Júnior Medeiros</p><a href="https://www.linkedin.com/in/j%C3%BAnior-medeiros-a58072259/" target="_blank" class="criador-img">
-                    <img src="Linkedin.png">
+            <img src="instagram.svg" alt="">
+            <img src="in.svg" alt="">
+            <img src="github.svg" alt="">
+            <img src="twitter.svg" alt="">
         </footer>
 
         <script src="codificador.js"></script>
+
 
     </body>
 </html>

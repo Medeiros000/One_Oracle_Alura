@@ -2,6 +2,7 @@ var encodeButton = document.getElementById("encode");
 var decodeButton = document.getElementById("decode");
 var copyButton = document.getElementById("copiar");
 var eraseButton = document.getElementById("reset");
+var lupaimg = document.getElementById("lupa");
 
 function capturaEcodifica(){
     var textoEntrada = document.getElementById("textoParaEnDec");
@@ -13,6 +14,7 @@ function capturaEcodifica(){
         var codificado = codificar(input);
         resultado(codificado);
         copyButton.style.display = 'inline-block';
+        lupaimg.style.display = 'none';
     }
 }
 function capturaEdecodifica(){
@@ -25,7 +27,7 @@ function capturaEdecodifica(){
         var decodificado = decodificar(input);
         resultado(decodificado);
         copyButton.style.display = 'inline-block';
-
+        lupaimg.style.display = 'none';
     }
 }
 function resultado(frase){
@@ -42,6 +44,7 @@ function limparCampos(){
     document.getElementById('textoParaEnDec').value = '';
     document.getElementById('resposta').value = '';
     copyButton.style.display = 'none';
+    lupaimg.style.display = 'block';
 
 }
 function codificar(input) {
