@@ -7,7 +7,9 @@ function capturaEcodifica(){
     var textoEntrada = document.getElementById("textoParaEnDec");
     var input = textoEntrada.value;
     var teste = seMaiusculasOuAcentuadas(input);
-    if(teste==true){
+    if(input == ""){
+        alert("Não há nada para criptografar");
+    }else if(teste==true){
         alert("Use apenas letras minuscúlas e sem acento.");
     }else{
         var codificado = codificar(input);
@@ -19,8 +21,10 @@ function capturaEdecodifica(){
     var textoEntrada = document.getElementById("textoParaEnDec");
     var input = textoEntrada.value;
     var teste = seMaiusculasOuAcentuadas(input);
-    if(teste==true){
-        alert("Use Apenas letras minuscúlas e sem acento.");
+    if(input == ""){
+        alert("Não há nada para descriptografar");
+    }else if(teste==true){
+        alert("Use apenas letras minuscúlas e sem acento.");
     }else{
         var decodificado = decodificar(input);
         resultado(decodificado);
@@ -80,7 +84,6 @@ function decodificar(palavra) {
                             .replace(/ober/g, mapping['ober'])
                                 .replace(/ufat/g, mapping['ufat']);
 }
-
 function seMaiusculasOuAcentuadas(texto){
     const regex = /[A-ZÁÉÍÓÚÀÈÌÒÙÃÕÇáéíóúàèìòùãõç]/;
     return regex.test(texto)
