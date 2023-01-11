@@ -21,6 +21,7 @@
     padding: 0.5em;
     cursor: pointer;
     fill: black;
+    border-radius: 12px;
 }
 .cabecalho > P{
     font-family: 'Inter';
@@ -38,13 +39,14 @@
     flex-direction: column;
     justify-content: center;
     height: 400px;
+    border: #000000;
 }
 .texto-input{
     border: none;
     height: 280px;
     margin-top: 10px;
     text-align: center;
-    font-size: 1em;
+    font-size: 1.5em;
     background: none;
 }
 .texto-input:focus,input:focus, select:focus{
@@ -66,6 +68,7 @@
 .aviso > p{
     font-size: 10px;
     color: #1c440c;
+    padding-left: 0.5em;
 }
 .botoes{
     display: flex;
@@ -80,6 +83,9 @@
     border-radius: 24px;
     color: #CCCCCC;
 }
+#encode:hover, #decode:hover, #copiar:hover{
+    opacity: 0.8;
+}
 .conteudo-direita{
     display: flex;
     flex-direction: column;
@@ -90,23 +96,39 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: #ffca1a;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border-radius: 32px;
+    line-height: normal;
 }
 .resposta{
-    border: none;
+    border: 1px solid #000000;
     background: none;
-    height: 200px;
-    margin-top: 0;
+    min-height: 70px;
+    margin-top: 22px;
     text-align: center;
-    font-size: 1em;
+    font-size: 1.5em;
     width: 100%;
+    resize:both;
+    overflow: hidden;
 }
 .resposta:focus,input:focus, select:focus{
     border: 0 none;
     outline: 0;
 }
+#explicacao{
+    background: none;
+}
+.img-lupa{
+    display: none;
+}
 .img-direita{
     display: none;
-    height: 150px;
+    height: 350px;
+}
+#explicacao{
+    padding: 32px;
+    text-align: center;
 }
 .rodape{
     display: flex;
@@ -164,9 +186,15 @@
         margin: 0 5%;
         justify-content: space-around;
     }
+    .img-lupa{
+        display: block;
+    }
     .texto-input, .resposta{
         font-size: 1.5em;
         width: auto;
+    }
+    .aviso{
+        margin-left: -15em;
     }
     .botoes{
         flex-direction: row;

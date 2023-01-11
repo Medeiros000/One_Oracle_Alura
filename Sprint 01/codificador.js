@@ -2,6 +2,8 @@ var encodeButton = document.getElementById("encode");
 var decodeButton = document.getElementById("decode");
 var copyButton = document.getElementById("copiar");
 var eraseButton = document.getElementById("reset");
+var imagem = document.getElementById("lupa");
+var explicacao = document.getElementById("explicacao");
 
 function capturaEcodifica(){
     var textoEntrada = document.getElementById("textoParaEnDec");
@@ -13,9 +15,27 @@ function capturaEcodifica(){
         alert("Use apenas letras minuscúlas e sem acento.");
     }else{
         var codificado = codificar(input);
-        resultado(codificado);
+        escreve(codificado);
         copyButton.style.display = 'inline-block';
+        imagem.style.display = 'none';
+        explicacao.style.display = 'none';
+        minhaSpan.classList.add("topo")
     }
+}
+function escreve(frase){
+    var resposta = document.getElementById('resposta');
+    resposta.innerHTML = (frase);
+}
+function copia(){
+    var resposta = document.getElementById('resposta');
+    var texto = resposta.innerText;
+    var temp = document.createElement("textarea");
+    document.body.appendChild(temp);
+    temp.value = texto;
+    temp.select();
+    document.execCommand("copy");
+    document.body.removeChild(temp);
+    minhaSpan.classList.add("topo")
 }
 function capturaEdecodifica(){
     var textoEntrada = document.getElementById("textoParaEnDec");
@@ -27,24 +47,18 @@ function capturaEdecodifica(){
         alert("Use apenas letras minuscúlas e sem acento.");
     }else{
         var decodificado = decodificar(input);
-        resultado(decodificado);
+        escreve(decodificado);
         copyButton.style.display = 'inline-block';
+        imagem.style.display = 'none';
+        explicacao.style.display = 'none';
+        minhaSpan.classList.add("topo")
     }
-}
-function resultado(frase){
-    var caixaResposta = document.getElementById("resposta");
-    caixaResposta.value = frase;
 }
 function copiarTexto() {
     var textoCopiado = document.getElementById("resposta");
     textoCopiado.select();
     textoCopiado.setSelectionRange(0, 99999)
     document.execCommand("copy");
-}
-function limparCampos(){
-    document.getElementById('textoParaEnDec').value = '';
-    document.getElementById('resposta').value = '';
-    copyButton.style.display = 'none';
 }
 function codificar(input) {
     const vogais = 'aeiou';
@@ -89,7 +103,22 @@ function seMaiusculasOuAcentuadas(texto){
     return regex.test(texto)
 }
 
+textoEntrada = document.getElementById("textoParaEnDec");
+textoEntrada.addEventListener('input', autoResize, false);
+
+function autoResize() {
+    this.style.height = 'auto';
+    this.style.height = this.scrollHeight + 'px';
+}
+
+var minhaSpan = document.getElementById("teste-resposta");
+
+function reload(){
+    location.reload();
+}
+
+
 encodeButton.onclick = capturaEcodifica;
 decodeButton.onclick = capturaEdecodifica;
-copyButton.onclick = copiarTexto;
-eraseButton.onclick= limparCampos;
+copyButton.onclick = copia;
+eraseButton.onclick= reload;
