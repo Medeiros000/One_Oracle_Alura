@@ -1,5 +1,7 @@
 *{
     background: #E5E5E5;
+    transition: all 0.5s;
+
 }
 
 .cabecalho{
@@ -15,12 +17,6 @@
     height: 48px;
     cursor: pointer;
     border-radius: 12px;
-}
-.cabecalho > P{
-    font-family: 'Inter';
-    font-weight: 400;
-    font-weight: bold;
-    cursor: pointer;
 }
 .conteudo{
     display: flex;
@@ -47,8 +43,14 @@
     font-weight: 400;
     font-size: 32px;
     line-height: 150%;
+    color: #0A3871;
     border: none;
     overflow: hidden;
+    resize: none;
+}
+.texto-input::-moz-placeholder{
+    color: #0A3871;
+    opacity: 1;
 }
 .texto-input:focus,input:focus, select:focus{
     border: 0 none;
@@ -66,6 +68,9 @@
     display: flex;
     width: 320px;
     height: 18px;
+    padding: 12px;
+    align-self: center;
+    left: auto;
     justify-content: center;
     align-items: center;
 }
@@ -101,6 +106,7 @@
     background: #0A3871;
     border-radius: 24px;
 }
+
 #decode{
     box-sizing: border-box;
     width: 343px;
@@ -114,6 +120,14 @@
     color: #0A3871;
     border: 1px solid #0A3871;
     border-radius: 24px;
+}
+#encode:hover, #decode:hover, #copiar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+#encode:active, #decode:active, #copiar:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 .conteudo-direita{
     min-height: 186px;
@@ -145,16 +159,17 @@
     width: 100%;
     min-height: 32px;
     align-self: center;
-    resize: vertical;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
     line-height: 150%;
+    color: #495057;
     border: none;
     overflow: hidden;
     text-align: center;
     background: none;
+    resize: vertical;
 }
 .resposta:focus,input:focus, select:focus{
     border: 0 none;
@@ -204,29 +219,50 @@
 }
 .rodape{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;;
+    flex-direction: column;
+    align-items: center;
     padding: 18px 0;
     gap: 8px;
     border-radius: 18px;
 }
 .links{
-
-}
-.img{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     height: 32px;
     padding: 8px;
     background: none;
 }
+.img{
+    height: 48px;
+    padding: 8px;
+    background: none;
+}
+.dev{
+    font-family: 'Inter';
+    font-size: large;
+    font-weight: bold;
+    color: #0A3871;
+    border: 5px solid #0A3871;
+    border-radius: 24px;
+    padding: 18px;
+    width: fit-content;
+    height: fit-content;
+}
 
 @media (min-width: 481px) and (max-width: 1023px) {
+    .cabecalho{
+        padding-top: 40px;
+        padding: 40px 40px 0;
+    }
     .conteudo{
         display: flex;
         flex-direction: column;
+        justify-content: center;
         margin-bottom: 25px;
         width: 100%;
     }
+    
     .conteudo-direita{
         height: fit-content;
         width: 90%;
@@ -246,10 +282,11 @@
         max-width: 688px;
     }
     
+    
 }
 @media (min-width: 1024px){
     .cabecalho{
-        margin: 0 10% 0;
+        margin: 40px 10% 0;
     }
     .conteudo{
         flex-direction: row;
@@ -276,6 +313,10 @@
         width: fit-content;
         align-self: flex-end;
     }
+    .aviso{
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
     .conteudo-direita{
         width: 400px;
     }
@@ -297,11 +338,13 @@
     .img-lupa{
         position: absolute;
         margin-top:  130px;
-        display: inline-block;        
+        display: flex;        
         background: none;
+        justify-content: center;
     }
     .img-direita{
         background: none;
+        width: 300px;
     }
     .resize-resposta{
         height: 48px;
@@ -309,8 +352,8 @@
     }
     #teste-resposta{
         position: relative;
-        top: 50%;
-        transform: translate(0,-50%,0,0);
+        top: 55%;
+        transform: translate(0,-55%,0,0);
         transform: all 50ms ease;
     }
     #teste-resposta.topo{
@@ -326,7 +369,7 @@
     }
     #explicacao{
         position: relative;
-        top: 50%;
+        top: 56%;
         width: 60%;
     }
     .botao-direita{

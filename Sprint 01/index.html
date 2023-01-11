@@ -16,14 +16,13 @@
     <body>
         <header class="cabecalho">
             <img src="vector.svg" alt="letra a" title="Site da Alura">
-            <p class="criador" id="reset" title="Clique para limpar os campos">Desenvolvido por Júnior Medeiros</p>
         </header>
         
         <main class="conteudo">
 
             <section class="conteudo-esquerda">
                     <main class="texto-resize">
-                        <textarea id="textoParaEnDec" class="texto-input" placeholder="Digite seu texto"></textarea>
+                        <textarea id="textoParaEnDec" onfocus="this.value='';" class="texto-input" placeholder="Digite seu texto"></textarea>
                     </main>
                     <footer class="btna">
                         <div class="aviso">
@@ -45,7 +44,7 @@
                     <div class="resize-resposta" id="teste-resposta">
                         <span id="resposta" class="resposta" role="textbox" placeholder="Nenhuma mensagem encontrada" contenteditable></span>
                     </div>
-                    <p id="explicacao" style="display: block">Digite o texto que deseja criptografar ou descriptografar</p>
+                    <p id="explicacao" style="display: block">Digite o texto que você deseja criptografar ou descriptografar.</p>
                     <div class="botao-direita">
                         <button id="copiar" style="display: none;" class="buttonCopiar">Copiar texto</button>
                     </div>
@@ -54,17 +53,17 @@
         </main>
 
         <footer class="rodape">
-            
+             <div class="dev">
+                <p>&#169; Desenvolvido por Júnior Medeiros</p>
+            </div>
             <div class="links">
-                <img class="img" src="instagram.svg" alt="instagram"><a href="https://www.instagram.com/medeiros000/" target="_blank"></a>
-                <img class="img" src="linkedin.svg" alt="linkedin"><a href="https://www.linkedin.com/in/j%C3%BAnior-medeiros-a58072259/" target="_blank"></a>
-                <img class="img" src="github.svg" alt="github"><a href="https://github.com/Medeiros000" target="_blank"></a>
-                <img class="img" src="twitter.svg" alt="twitter"><a href="https://twitter.com/tHE_bISoM" target="_blank"></a>
+                 <a href="https://www.linkedin.com/in/j%C3%BAnior-medeiros-a58072259/" target="_blank"><img class="img" src="linkedin.svg" alt="linkedin"></a>
+                 <a href="https://github.com/Medeiros000" target="_blank"><img class="img" src="github.svg" alt="github"></a>
+                 <a href="https://twitter.com/tHE_bISoM" target="_blank"><img class="img" src="twitter.svg" alt="twitter"></a>
+                 <a href="https://www.instagram.com/medeiros000/" target="_blank"><img class="img" src="instagram.svg" alt="instagram"></a>
             </div>
         </footer>
 
         <script src="codificador.js"></script>
-
-
     </body>
 </html>
