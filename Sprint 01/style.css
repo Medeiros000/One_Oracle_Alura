@@ -1,22 +1,16 @@
 *{
-    background: #E5E5E5;
+    background: #F3F5FC;
     transition: all 0.5s;
-
 }
 
 .cabecalho{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 16px 0;
     height: 86px;
 }
 .cabecalho > img{
     height: 48px;
     cursor: pointer;
-    border-radius: 12px;
+    position: absolute;
+    padding: 24px 0 0 16px;
 }
 .conteudo{
     display: flex;
@@ -203,7 +197,6 @@
     background: none;
 }
 #copiar{
-    box-sizing: border-box;
     width: 279px;
     height: 67px;
     font-family: 'Inter';
@@ -211,10 +204,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
-    text-align: center;
-
-    color: #0A3871;
-    
+    border: 1px solid #0A3871;
     border-radius: 24px;
 }
 .rodape{
@@ -235,7 +225,7 @@
 }
 .img{
     height: 48px;
-    padding: 8px;
+    padding: 0 20px;
     background: none;
 }
 .dev{
@@ -252,8 +242,10 @@
 
 @media (min-width: 481px) and (max-width: 1023px) {
     .cabecalho{
-        padding-top: 40px;
-        padding: 40px 40px 0;
+        height: 123px;
+    }
+    .cabecalho > img{
+        padding: 74px 0 0 40px;
     }
     .conteudo{
         display: flex;
@@ -262,7 +254,6 @@
         margin-bottom: 25px;
         width: 100%;
     }
-    
     .conteudo-direita{
         height: fit-content;
         width: 90%;
@@ -281,23 +272,21 @@
     #buttonCopiar{
         max-width: 688px;
     }
-    
-    
 }
 @media (min-width: 1024px){
     .cabecalho{
-        margin: 40px 10% 0;
+        margin: 40px 84px 0;
+        gap: 40px;
     }
     .conteudo{
         flex-direction: row;
-        justify-content: center;
         height: 850px;
         margin-bottom: 40px;
         justify-content: space-evenly;
     }
     .conteudo-esquerda{
         margin-top: 40px;
-        margin-left: 240px;
+        margin-left: 20px;
         max-width: 70%;
         height: 850px;
     }
@@ -318,26 +307,27 @@
         align-items: flex-start;
     }
     .conteudo-direita{
-        width: 400px;
+        max-width: 400px;
     }
     .botoes{
         flex-direction: row;
-        border: #000;
-        width: 690px;
+        max-width: 690px;
     }
     #encode, #decode{
         max-width: 328px;
     }
     .caixa{
+        position: absolute;
+        top: 40px;
         display: flex;
         flex-direction: column;
         justify-items: center;
         width: 400px;
-        height: 850px;
+        height: 950px;
     }
     .img-lupa{
         position: absolute;
-        margin-top:  130px;
+        margin-top:  243px;
         display: flex;        
         background: none;
         justify-content: center;
@@ -373,9 +363,10 @@
         width: 60%;
     }
     .botao-direita{
-        position: relative;;
-        top: 74%;
-        margin-bottom: 22px;
+        position: absolute;
+        bottom: 14px;
+        margin: 0;
+        padding: 32px;
     }
     
 }

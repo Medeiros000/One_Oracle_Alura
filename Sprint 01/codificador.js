@@ -35,7 +35,7 @@ function copia(){
     temp.select();
     document.execCommand("copy");
     document.body.removeChild(temp);
-    minhaSpan.classList.add("topo")
+    minhaSpan.classList.add("topo");
 }
 function capturaEdecodifica(){
     var textoEntrada = document.getElementById("textoParaEnDec");
@@ -53,12 +53,6 @@ function capturaEdecodifica(){
         explicacao.style.display = 'none';
         minhaSpan.classList.add("topo")
     }
-}
-function copiarTexto() {
-    var textoCopiado = document.getElementById("resposta");
-    textoCopiado.select();
-    textoCopiado.setSelectionRange(0, 99999)
-    document.execCommand("copy");
 }
 function codificar(input) {
     const vogais = 'aeiou';
@@ -115,6 +109,8 @@ var minhaSpan = document.getElementById("teste-resposta");
 
 function reload(){
     location.reload();
+    document.getElementById("textoParaEnDec").value="";
+    document.getElementById("resposta").innerText="";
 }
 
 
